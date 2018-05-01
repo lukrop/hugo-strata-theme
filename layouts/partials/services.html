@@ -1,0 +1,17 @@
+{{ "<!-- services -->" | safeHTML }}
+<section id="two">
+	{{ with .Site.Params.services.title }}<h2>{{ . | markdownify }}</h2>{{ end }}
+    {{ with .Site.Params.services.content }}<p>{{ . | markdownify }}</p>{{ end }}
+    <br/>
+	<div class="row">
+	{{ range $i, $e := .Site.Params.services.list }}
+        {{ if not .hide }}
+		<article class="4u 6u$(large) 12u$(small) service-item">
+            <i class="service-icon {{ .icon_name }}"></i>
+			<h3>{{ .title | markdownify }}</h3>
+			<p>{{ .description | markdownify }}</p>
+		</article>
+        {{ end }}
+	{{ end }}
+    </div>
+</section>

@@ -6,6 +6,9 @@
 	{{ with .Site.Params.sidebar.bio }}
 		<h1>{{ . | markdownify }}</h1>
 	{{ end }}
+    {{ with .Site.Params.sidebar.subtitle }}
+		<h2>{{ . | markdownify }}</h2>
+    {{ end }}
 
 	{{ with .Site.Menus.main }}
 		<nav id="sidebar">

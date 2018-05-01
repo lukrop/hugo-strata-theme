@@ -6,6 +6,10 @@
 	{{ if not .Site.Params.portfolio.hide }}
 		{{ partial "portfolio" . }}
 	{{ end }}
+    
+    {{ if not .Site.Params.services.hide }}
+		{{ partial "services" . }}
+	{{ end }}
 
 	{{ if not .Site.Params.recentposts.hide }}
 		{{ partial "recent-posts" . }}
